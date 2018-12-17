@@ -15,7 +15,7 @@ b = ord(input("Вторая буква: "))
 
 a = a - ord('a') + 1
 b = b - ord('a') + 1
-dist_a_b = abs(a - b - 1)
+dist_a_b = abs(a - b) - 1
 
 print(f'Позиции букв {a} и {b}')
 print(f'Расстояние между буквами: {dist_a_b}')
