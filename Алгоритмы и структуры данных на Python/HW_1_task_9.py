@@ -14,9 +14,9 @@ a = int(input('a = '))
 b = int(input('b = '))
 c = int(input('c = '))
 
-if ((a > b) & (a < c)) | ((a < b) & (a > c)):
+if ((a > b) and (a < c)) or ((a < b) and (a > c)):
     print(f"Среднее из трех чисел: {a}")
-elif ((b > a) & (b < c)) | ((b < a) & (b > c)):
+elif ((b > a) and (b < c)) or ((b < a) and (b > c)):
     print(f"Среднее из трех чисел: {b}")
 else:
     print(f"Среднее из трех чисел: {c}") 
