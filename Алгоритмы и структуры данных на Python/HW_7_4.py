@@ -16,14 +16,9 @@ def selection_sort(orig_list):
                 idx_min = j
         tmp = orig_list[idx_min]
         orig_list[idx_min] = orig_list[i]
-        orig_list[i] = tmp
-    
+        orig_list[i] = tmp   
     return orig_list    
 
-#orig_list = [0, 3, 5, 1, 2, 4, 2, 3, 34, 34, 16]
-#print(orig_list)
-#print(selection_sort(orig_list))
-#print(timeit.timeit("selection_sort(orig_list)", setup="from __main__ import selection_sort, orig_list", number=100))
 
 def insertion_sort(orig_list):
     for i in range(len(orig_list)):
@@ -33,13 +28,8 @@ def insertion_sort(orig_list):
             orig_list[j] = orig_list[j-1]
             j -= 1
         orig_list[j] = v
-    
-    return orig_list    
-
-#orig_list_1 = [0, 3, 5, 1, 2, 4, 2, 3, 34, 34, 16]
-#print(orig_list_1)
-#print(insertion_sort(orig_list_1))
-#print(timeit.timeit("insertion_sort(orig_list_1)", setup="from __main__ import insertion_sort, orig_list_1", number=100))
+    return orig_list   
+ 
 
 def bubble_sort(orig_list):
     n = 1
@@ -49,12 +39,6 @@ def bubble_sort(orig_list):
                 orig_list[i], orig_list[i+1] = orig_list[i+1], orig_list[i]
         n +=1
     return orig_list
-        
-
-#orig_list_2 = [0, 3, 5, 1, 2, 4, 2, 3, 34, 34, 16]
-#print(orig_list_2)
-#print(bubble_sort(orig_list_2))
-#print(timeit.timeit("bubble_sort(orig_list_2)", setup="from __main__ import bubble_sort, orig_list_2", number=100))
 
 def quick_sort(orig_list):
     if len(orig_list) <= 1:
@@ -64,14 +48,9 @@ def quick_sort(orig_list):
         pivot = random.choice(orig_list)
         less = [x for x in orig_list if x < pivot]
         equal = [x for x in orig_list if x == pivot]
-        greater = [x for x in orig_list if x > pivot]
-    
+        greater = [x for x in orig_list if x > pivot]    
         return quick_sort(less) + equal + quick_sort(greater)
-        
-#orig_list_3 = [0, 3, 5, 1, 2, 4, 2, 3, 34, 34, 16]
-#print(orig_list_3)
-#print(quick_sort(orig_list_3))
-#print(timeit.timeit("quick_sort(orig_list_3)", setup="from __main__ import quick_sort, orig_list_3", number=100))
+    
 
 new_list = [random.randint(0, 200) for i in range(10)]
 new_list1 = copy.deepcopy(new_list)
@@ -93,8 +72,8 @@ print(timeit.timeit("bubble_sort(new_list2)", setup="from __main__ import bubble
 print(new_list3)
 print(quick_sort(new_list3))
 print(timeit.timeit("quick_sort(new_list3)", setup="from __main__ import quick_sort, new_list3", number=100))
-"""
 
+"""
 Время выполнения сортировок:
     Сортировка выбором:
         [0, 3, 5, 1, 2, 4, 2, 3, 34, 34, 16]
